@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">红包助手</string>
+    <string name="accessibility_service_name">红包助手</string>
+    <string name="accessibility_service_description">自动抢微信红包，点击即领</string>
+    <string name="notification_title">红包助手运行中</string>
+    <string name="notification_content">已开启自动抢红包</string>
+</resources>
