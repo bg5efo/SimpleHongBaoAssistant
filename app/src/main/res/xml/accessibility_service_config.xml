@@ -6,6 +6,5 @@
     android:accessibilityFeedbackType="feedbackAllMask"
     android:accessibilityFlags="flagReportViewIds|flagIncludeNotImportantViews"
     android:canRetrieveWindowContent="true"
-    android:canPerformGesture="true"
     android:notificationTimeout="100"
     android:isAccessibilityTool="false" />
