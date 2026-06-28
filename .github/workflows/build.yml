@@ -21,14 +21,11 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Setup Gradle Wrapper
+      - name: Generate Gradle Wrapper
         run: |
-          WRAPPER_DIR="gradle/wrapper"
-          mkdir -p "$WRAPPER_DIR"
-          # Download gradle-wrapper.jar from Maven Central
-          cd "$WRAPPER_DIR"
-          curl -sL -o gradle-wrapper.jar "https://repo1.maven.org/maven2/org/gradle/gradle-wrapper/8.10.2/gradle-wrapper-8.10.2.jar"
-          cd ../..
+          curl -sL -o /tmp/gradle.zip "https://services.gradle.org/distributions/gradle-8.10.2-bin.zip"
+          unzip -q /tmp/gradle.zip -d /opt
+          /opt/gradle-8.10.2/bin/gradle wrapper --gradle-version 8.10.2
 
       - name: Grant execute permission
         run: chmod +x gradlew
