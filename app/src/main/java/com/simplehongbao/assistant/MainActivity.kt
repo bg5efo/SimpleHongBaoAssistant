@@ -28,8 +28,6 @@ class MainActivity : AppCompatActivity() {
         val swNormal = findViewById<Switch>(R.id.swNormal)
         val swShuffled = findViewById<Switch>(R.id.swShuffled)
         val tvSpeed = findViewById<TextView>(R.id.tvSpeed)
-        val btnSpeed = findViewById<Button>(R.id.btnSpeed)
-
         // 加载保存的设置
         loadSettings()
 
@@ -63,7 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         // 响应速度按钮
         updateSpeedText(tvSpeed)
-        btnSpeed.setOnClickListener {
+        tvSpeed.setOnClickListener {
             when (WxBaoAccessibilityService.responseDelayMs) {
                 50L -> WxBaoAccessibilityService.responseDelayMs = 100L
                 100L -> WxBaoAccessibilityService.responseDelayMs = 200L
@@ -88,7 +86,6 @@ class MainActivity : AppCompatActivity() {
                 "请在系统设置中开启红包助手的无障碍服务",
                 Toast.LENGTH_LONG
             ).show()
-            // 跳转到无障碍设置
             startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
         }
 
